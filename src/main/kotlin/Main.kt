@@ -11,7 +11,7 @@ val l = LogManager.getLogManager().getLogger("").apply { level = Level.OFF }
 
 /**
  * Esta es nuestra clase, a la que le introduciremos de input la ruta del archivo.
- * Ruta es el input de nuestra clase.
+ * @param ruta es el input de nuestra clase.
  */
 class CatalogoLibrosXML(ruta: String) {
 
@@ -22,10 +22,6 @@ class CatalogoLibrosXML(ruta: String) {
      */
     init {constructor(ruta)}
 
-    //No estoy seguro a que te refieres con abortar. Lo voy a interpretar como que se para el programa si el path introducido está mal
-    /**
-     * Aqui nuestro método constructor
-     */
     private fun constructor(cargador: String) = try { readXml(cargador) } catch (e: java.io.FileNotFoundException) { System.exit(-1) }
 
     /**
